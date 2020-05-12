@@ -16,7 +16,6 @@ class Login extends Component {
       togle:false,
       errors:{},
       auth: false,
-      check:0
       
     }
   }
@@ -33,17 +32,14 @@ class Login extends Component {
                    Cookies.set('token', response.data.token,{ expires: 7 })
 
                
-                    //window.location.href = `/home`;
-                    this.setState({check:1})
+                    window.location.href = `/home`;
+                   
                
                 }
                 else{
                     this.setState({errors:response.data.errors})
 
                 }
-                    
-                   
-
                 })
                 .catch(error => {
                     console.log(error)
@@ -96,9 +92,7 @@ responseFacebook = response => {
 
 
     render() {
-      if(this.state.check==1){
-        return(<Home/>)
-      }
+      
       let facebookData;
       facebookData = (<FacebookLogin
         appId="1055988318107297"
@@ -157,7 +151,7 @@ responseFacebook = response => {
                  
                   <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center form p-4">
                       <img class="logo" src={require("./img/findjob.png")}/>
-                      <h1 class="display-4 py-2 text-truncate">User Login1</h1>
+                      <h1 class="display-4 py-2 text-truncate">User Login</h1>
                       <div class="px-2">
                       
                          <div class="form-group">

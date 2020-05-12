@@ -93,13 +93,7 @@ class EditJobs extends Component {
     render() {
        // this.props.location.state.index?alert(this.props.location.state.index):alert('yo')
        
-       if( this.props.location.state.index>=0){
-           alert('0')
-       }
-       else{
-        alert('1')
-       }
-     
+      
         return (
             
             <div>
