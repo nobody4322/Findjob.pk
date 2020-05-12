@@ -1,0 +1,25 @@
+.conM{    
+	max-width: 90%;
+    margin: 0 auto;
+}
+.titleM{
+	font-family: Quicksand;
+	font-size: 2rem;
+	padding-top:1.5rem;
+	padding-bottom: 1rem;
+}
+.rounded-rectangleM{
+    margin-left: 25%;
+	margin-top: 6rem;
+	background:red;
+	width: 50%;
+	background:white;
+	border-radius: 2rem;
+	padding-bottom: 3rem;
+}
+.barM{
+	background-image: linear-gradient(to left, #DD0AE4 , #44E6F8);
+	height: .3rem;
+	border-radius: 1rem;
+	margin-bottom: 1.5rem;
+}

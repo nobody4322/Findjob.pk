@@ -1,0 +1,20 @@
+.rounded-rectangle1{
+	margin-top: 6rem;
+	background:red;
+    width: 50%;
+    margin-left:20% ;
+	background:white;
+	border-radius: 2rem;
+	padding-bottom: 3rem;
+}
+.dp-img{
+	
+	margin-top: 1.5rem;
+    margin-left: 0%;
+    width: 20%;
+}
+.dp-pic{
+    padding: 0;
+   
+	
+}

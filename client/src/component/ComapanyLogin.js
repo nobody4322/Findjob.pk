@@ -1,0 +1,128 @@
+import React, { Component } from 'react';
+import '../Styles/styles.css'
+import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
+
+import axios from "axios";
+import Cookies from 'js-cookie'
+
+
+
+class CompanyLogin extends Component {
+  constructor(props){
+    super(props)
+    this.state={
+      email:'',
+      password:'',
+      errors:{},
+    }
+   
+}
+  login(){
+    axios.post("/company/login", this.state)
+    .then(response => {
+     
+      if(response.data.errors==undefined){
+          
+        Cookies.set('adtoken', response.data.token,{ expires: 7 })
+
+   
+        window.location.href = `/Chome`;
+   
+    }
+    else{
+        this.setState({errors:response.data.errors})
+
+    }
+        
+       
+
+    })
+    .catch(error => {
+        console.log(error)
+    })
+
+  }
+  changehandler=(e)=>{
+    this.setState({[e.target.name]:e.target.value})
+   }
+
+
+    render() {
+
+      if(Cookies.get('adtoken'))
+          {
+            let token=Cookies.get('adtoken')
+            const body={
+              token:token
+            }
+            
+           
+            axios.post("/company/authenticate", body)
+            .then(response=>{
+             
+              if(response.data.check==true){
+                window.location.href = `/Chome`;
+
+              }
+        
+
+            })
+              
+            
+          }
+      
+      
+     
+        return (
+                <div class="container bg">
+                <nav className="navbar navbar-expand-lg navbar-light fixed-top">
+                <div className="container">
+                 
+                  <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
+                    <ul className="navbar-nav ml-auto">
+                      <li className="nav-item">
+                        <Link className="nav-link" to={"/Clogin"}>Login</Link>
+                      </li>
+                      <li className="nav-item">
+                        <Link className="nav-link" to={"/Csignup"}>Sign up</Link>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+            </nav>
+                   
+                   <div class="row text-white">
+                       
+                        <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center form p-4">
+                            <img class="logo" src={require("./img/findjob.png")}/>
+                            <h1 class="display-4 py-2 text-truncate">Company Login</h1>
+                            <div class="px-2">
+                            
+                               <div class="form-group">
+                               <input type="email"  value={this.state.email} onChange={this.changehandler} className="form-control form-control-lg" placeholder="email"
+                               name="email"/>
+                                {this.state.errors.Email ? 
+                                <span className='error'>{this.state.errors.Email}</span>:null}
+                               </div>
+                                <div class="form-group">
+                                <input type="password"  value={this.state.password} onChange={this.changehandler} className="form-control form-control-lg" placeholder="Password"
+                                name="password"/>
+                                {this.state.errors.Password ? 
+                                 <span className='error'>{this.state.errors.Password}</span>:null}
+                                </div>
+                                <button onClick={this.login.bind(this)} class="btn btn-primary">Login</button>
+                            
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+           
+            
+            
+        );
+    }
+}
+
+export default CompanyLogin;

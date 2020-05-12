@@ -1,0 +1,26 @@
+body{
+	background:#F5F5F5;
+	font-family: raleway;
+}
+.bar{
+	background-image: linear-gradient(to left, #DD0AE4 , #44E6F8);
+	height: .4rem;
+	border-radius: 1rem;
+	margin-bottom: 2rem;
+}
+
+.white-box{
+	margin-top: 2rem;
+	background: white;
+	border-radius: 2rem;
+	padding: 3rem;
+	padding-bottom: 2rem;
+	margin-bottom: 2rem;
+}
+.title{
+	font-family: raleway;
+	font-size: 	2rem;
+	font-weight: 600;
+	margin-bottom: .5rem
+}
+
