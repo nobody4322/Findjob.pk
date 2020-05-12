@@ -7,6 +7,7 @@ const db=require('./config/keys').mongoURI;
 const user=require('./routes/user')
 const company=require('./routes/company')
 var cors = require('cors');
+const path=require('path')
 const PORT=process.env.PORT|| 5000
 
 
