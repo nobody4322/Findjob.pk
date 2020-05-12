@@ -42,8 +42,8 @@ function App() {
     <Router>
       
  
-      <Route exact path='/' component={Login} />
-      <Route path="/login" component={Login} />
+      <Route exact path='/login' component={Login} />
+     
       <Route path="/signup" component={SignUp} />
       <ProtectedRoute path="/home" component={Home} />
       <ProtectedRoute path="/profile" component={Profile} />

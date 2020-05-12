@@ -16,6 +16,7 @@ class Login extends Component {
       togle:false,
       errors:{},
       auth: false,
+      check:0
       
     }
   }
@@ -32,7 +33,8 @@ class Login extends Component {
                    Cookies.set('token', response.data.token,{ expires: 7 })
 
                
-                    window.location.href = `/home`;
+                    //window.location.href = `/home`;
+                    this.setState({check:1})
                
                 }
                 else{
@@ -57,7 +59,11 @@ class Login extends Component {
     
 }
 responseFacebook = response => {
-  console.log(response);
+  if(this.state.check==1){
+    return(
+      <Home/>
+    )
+  }
   if(response.status !== 'unknown'){
   
      
