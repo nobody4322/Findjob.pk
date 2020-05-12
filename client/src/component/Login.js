@@ -59,11 +59,7 @@ class Login extends Component {
     
 }
 responseFacebook = response => {
-  if(this.state.check==1){
-    return(
-      <Home/>
-    )
-  }
+  
   if(response.status !== 'unknown'){
   
      
@@ -100,6 +96,9 @@ responseFacebook = response => {
 
 
     render() {
+      if(this.state.check==1){
+        return(<Home/>)
+      }
       let facebookData;
       facebookData = (<FacebookLogin
         appId="1055988318107297"
