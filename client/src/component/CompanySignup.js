@@ -81,7 +81,7 @@ changehandler=(e)=>{
                 
                  <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center form p-4">
                      <img class="logo" src={require("./img/findjob.png")}/>
-                     <h1 class="display-4 py-2 text-truncate">Company Sign Up</h1>
+                     <h1 class="display-6 py-2 text-truncate">Company Sign Up</h1>
                      <div class="px-2">
                      
                         <div class="form-group">
@@ -111,6 +111,17 @@ changehandler=(e)=>{
                          <span className='error'>{this.state.errors.Company}</span>:null}
                          </div>
                          <button onClick={this.register.bind(this)} class="btn btn-primary btn-lg">Register</button>
+                        
+                         <div class="dis">
+                         <ul className="navbar-nav ml-auto">
+                          
+                           <li className="nav-item">
+                             <Link className="nav-link" to={"/Clogin"}>Login</Link>
+                           </li>
+                         </ul>
+                         </div>
+                      
+                        
                     
                      </div>
                  </div>

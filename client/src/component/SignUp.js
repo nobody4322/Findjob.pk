@@ -109,7 +109,14 @@ class SignUp extends Component {
                         <span className='error'>{this.state.errors.Mobile}</span>:null}
                          </div>
                          <button onClick={this.register.bind(this)} class="btn btn-primary btn-lg">Register</button>
-                     
+                         <div class="dis">
+                         <ul className="navbar-nav ml-auto">
+              
+                        <li className="nav-item">
+                             <Link className="nav-link" to={"/login"}>Login</Link>
+                        </li>
+                          </ul>
+                    </div>
                      </div>
                  </div>
              </div>

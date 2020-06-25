@@ -26,6 +26,7 @@ class Login extends Component {
    
           axios.post('/user/login', this.state)
                 .then(response => {
+                
                  
                   if(response.data.errors==undefined){
                    
@@ -92,6 +93,7 @@ responseFacebook = response => {
 
 
     render() {
+      
       
       let facebookData;
       facebookData = (<FacebookLogin
@@ -171,6 +173,15 @@ responseFacebook = response => {
                           <div>{facebookData}</div>
                           {this.state.errors.Check ? 
                             <span className='error'>{this.state.errors.Check}</span>:null}
+
+                            <div class="dis">
+                                     <ul className="navbar-nav ml-auto">
+                          
+                                    <li className="nav-item">
+                                         <Link className="nav-link" to={"/signup"}>Sign Up</Link>
+                                    </li>
+                                      </ul>
+                                </div>
     
 
                          
